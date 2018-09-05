@@ -1,6 +1,6 @@
 {
   "name": "@yesiree/bus",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A simple implementation of an event bus",
   "main": "index.js",
   "scripts": {

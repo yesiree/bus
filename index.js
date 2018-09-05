@@ -1,9 +1,13 @@
+module.exports = () => {
+  return new EventBus()
+}
+
 function EventBus () {
   this.handlers = {}
   this.pending = []
 }
 
-EventBus.prototype.afterPending = function () {
+EventBus.prototype.settle = function () {
   return Promise.all(this.pending.slice())
 }
 
@@ -27,5 +31,3 @@ EventBus.prototype.dispatch = function (key, ...args) {
   this.pending.push(promise)
   return promise
 }
-
-module.exports = EventBus
